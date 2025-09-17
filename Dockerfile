@@ -14,7 +14,7 @@ RUN wget "https://mirror.ox.ac.uk/sites/ctan.org/systems/texlive/tlnet/update-tl
     && tlmgr --version
 
 # Set tlmgr to use Tsinghua University mirror
-RUN tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
+# RUN tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
 
 # Update tlmgr itself
 RUN tlmgr update --self
