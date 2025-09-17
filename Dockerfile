@@ -3,10 +3,13 @@ FROM overleafcep/sharelatex:5.5.4-ext-v3.1
 SHELL ["/bin/bash", "-cx"]
 
 # update tlmgr itself
-# add 
-# "sed -i 's|https://mirror.ox.ac.uk/sites/ctan.org/systems/texlive/tlnet/|https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/|g' update-tlmgr-latest.sh" 
-# to change mirror before "sh update-tlmgr-latest.sh"
-RUN wget "https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh" \
+# tsinghua mirror
+# RUN wget "https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh" \
+#     && sed -i 's|https://mirror.ox.ac.uk/sites/ctan.org/systems/texlive/tlnet/|https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/|g' update-tlmgr-latest.sh \
+#     && sh update-tlmgr-latest.sh \
+#     && tlmgr --version
+# original
+RUN wget "https://mirror.ox.ac.uk/sites/ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh" \
     && sh update-tlmgr-latest.sh \
     && tlmgr --version
 
