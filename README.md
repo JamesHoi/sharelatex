@@ -21,7 +21,7 @@ bin/up -d
 ```
 
 ## Build from Dockerfile
-```docker
+```dockerfile
 # Dockerfile
 FROM overleafcep/sharelatex:5.5.4-ext-v3.1
 
